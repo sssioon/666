@@ -5,84 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自主申报在线资料登记系统</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.gov.cn/favicon.ico" type="image/x-icon"> <!-- 政府图标 -->
 </head>
 <body>
 
-<h1>自主申报在线资料登记系统</h1>
-
-<p>验证时间：<span id="verifyTime"></span></p>
-<p>数据来源：全国防止返贫监测和衔接推进乡村振兴信息系统</p>
+<!-- 页面头部 -->
+<header>
+    <h1>防止返贫监测申报系统</h1>
+    <p>数据来源：全国防止返贫监测和衔接推进乡村振兴信息系统</p>
+</header>
 
 <!-- 表单区域 -->
-<form id="applicationForm">
+<section class="form-section">
     <h2>申请人信息申报</h2>
-    
-    <label for="name">申请人姓名：</label>
-    <input type="text" id="name" required>
 
-    <label for="idNumber">申请人证件号码：</label>
-    <input type="text" id="idNumber" required>
+    <!-- 表单 -->
+    <form id="applicationForm">
+        <label for="name">申请人姓名：</label>
+        <input type="text" id="name" required>
 
-    <label for="phone">申请人联系电话：</label>
-    <input type="text" id="phone" required>
+        <label for="idNumber">申请人证件号码：</label>
+        <input type="text" id="idNumber" required>
 
-    <label for="registeredAddress">申请人户籍地址：</label>
-    <input type="text" id="registeredAddress" required>
+        <label for="phone">申请人联系电话：</label>
+        <input type="text" id="phone" required>
 
-    <label for="currentAddress">申请人现居住地：</label>
-    <input type="text" id="currentAddress" required>
+        <label for="registeredAddress">申请人户籍地址：</label>
+        <input type="text" id="registeredAddress" required>
 
-    <label for="householdType">户类型：</label>
-    <select id="householdType" required>
-        <option>贫困户</option>
-        <option>监测户</option>
-        <option>脱贫户</option>
-        <option>返贫户</option>
-    </select>
+        <label for="currentAddress">申请人现居住地：</label>
+        <input type="text" id="currentAddress" required>
 
-    <label for="identifyDate">识别年度：</label>
-    <input type="date" id="identifyDate" required>
+        <label for="householdType">户类型：</label>
+        <select id="householdType" required>
+            <option>贫困户</option>
+            <option>监测户</option>
+            <option>脱贫户</option>
+            <option>返贫户</option>
+        </select>
 
-    <label for="noPolicyDate">脱贫不享受政策年度：</label>
-    <input type="date" id="noPolicyDate" required>
+        <label for="identifyDate">识别年度：</label>
+        <input type="date" id="identifyDate" required>
 
-    <label for="identifyStandard">识别标准：</label>
-    <input type="text" id="identifyStandard" value="国家标准" readonly>
+        <label for="noPolicyDate">脱贫不享受政策年度：</label>
+        <input type="date" id="noPolicyDate" required>
 
-    <label for="waterStatus">饮水情况：</label>
-    <select id="waterStatus">
-        <option>安全</option>
-        <option>不安全</option>
-    </select>
+        <label for="identifyStandard">识别标准：</label>
+        <input type="text" id="identifyStandard" value="国家标准" readonly>
 
-    <label for="housingStatus">住房情况：</label>
-    <select id="housingStatus">
-        <option>安全</option>
-        <option>不安全</option>
-    </select>
+        <label for="waterStatus">饮水情况：</label>
+        <select id="waterStatus">
+            <option>安全</option>
+            <option>不安全</option>
+        </select>
 
-    <label for="workersCount">家庭务工人员数：</label>
-    <input type="number" id="workersCount" required>
+        <label for="housingStatus">住房情况：</label>
+        <select id="housingStatus">
+            <option>安全</option>
+            <option>不安全</option>
+        </select>
 
-    <label for="workIncome">务工收入合计(元)：</label>
-    <input type="number" id="workIncome" required>
+        <label for="workersCount">家庭务工人员数：</label>
+        <input type="number" id="workersCount" required>
 
-    <label for="averageIncome">家庭人均纯收入：</label>
-    <input type="number" id="averageIncome" required>
+        <label for="workIncome">务工收入合计(元)：</label>
+        <input type="number" id="workIncome" required>
 
-    <label for="registerDate">登记时间：</label>
-    <input type="date" id="registerDate" required>
+        <label for="averageIncome">家庭人均纯收入：</label>
+        <input type="number" id="averageIncome" required>
 
-    <!-- 身份证上传功能 -->
-    <label for="idCardImage">上传身份证正反面：</label>
-    <input type="file" id="idCardImage" accept="image/*" required>
+        <label for="registerDate">登记时间：</label>
+        <input type="date" id="registerDate" required>
 
-    <button type="submit">提交申请</button>
-</form>
+        <!-- 身份证上传 -->
+        <label for="idCardImage">上传身份证正反面：</label>
+        <input type="file" id="idCardImage" accept="image/*" required>
+
+        <button type="submit">提交申请</button>
+    </form>
+</section>
 
 <!-- 链接到其他页面 -->
-<p><a href="statistics.html" target="_blank">查看最新的申报数据统计表</a></p>
+
 <p><a href="mingbai_zhi.html" target="_blank">防止返贫监测对象申报政策“明白纸”</a></p>
+<p><a href="statistics.html" target="_blank">查看填写的申报数据统计表</a></p>
 
 <script src="script.js"></script>
 </body>
