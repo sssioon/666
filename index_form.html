@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自主申报在线资料登记系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>自主申报在线资料登记系统</h1>
+
+<p>验证时间：<span id="verifyTime"></span></p>
+<p>数据来源：全国防止返贫监测和衔接推进乡村振兴信息系统</p>
+
+<!-- 表单区域 -->
+<form id="applicationForm">
+    <h2>申请人信息申报</h2>
+    
+    <label for="name">申请人姓名：</label>
+    <input type="text" id="name" required>
+
+    <label for="idNumber">申请人证件号码：</label>
+    <input type="text" id="idNumber" required>
+
+    <label for="phone">申请人联系电话：</label>
+    <input type="text" id="phone" required>
+
+    <label for="registeredAddress">申请人户籍地址：</label>
+    <input type="text" id="registeredAddress" required>
+
+    <label for="currentAddress">申请人现居住地：</label>
+    <input type="text" id="currentAddress" required>
+
+    <label for="householdType">户类型：</label>
+    <select id="householdType" required>
+        <option>贫困户</option>
+        <option>监测户</option>
+        <option>脱贫户</option>
+        <option>返贫户</option>
+    </select>
+
+    <label for="identifyDate">识别年度：</label>
+    <input type="date" id="identifyDate" required>
+
+    <label for="noPolicyDate">脱贫不享受政策年度：</label>
+    <input type="date" id="noPolicyDate" required>
+
+    <label for="identifyStandard">识别标准：</label>
+    <input type="text" id="identifyStandard" value="国家标准" readonly>
+
+    <label for="waterStatus">饮水情况：</label>
+    <select id="waterStatus">
+        <option>安全</option>
+        <option>不安全</option>
+    </select>
+
+    <label for="housingStatus">住房情况：</label>
+    <select id="housingStatus">
+        <option>安全</option>
+        <option>不安全</option>
+    </select>
+
+    <label for="workersCount">家庭务工人员数：</label>
+    <input type="number" id="workersCount" required>
+
+    <label for="workIncome">务工收入合计(元)：</label>
+    <input type="number" id="workIncome" required>
+
+    <label for="averageIncome">家庭人均纯收入：</label>
+    <input type="number" id="averageIncome" required>
+
+    <label for="registerDate">登记时间：</label>
+    <input type="date" id="registerDate" required>
+
+    <label for="idCardFront">身份证正面：</label>
+    <input type="file" id="idCardFront" accept="image/*" required>
+
+    <label for="idCardBack">身份证反面：</label>
+    <input type="file" id="idCardBack" accept="image/*" required>
+
+    <button type="submit">提交申请</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
