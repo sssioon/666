@@ -5,9 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>防止返贫监测对象申报政策“明白纸”</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 样式：模态框 */
+        .modal {
+            display: none; /* 默认不显示 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
+<!-- 防止返贫监测对象申报政策“明白纸”内容 -->
 <h1>防止返贫监测对象申报政策“明白纸”</h1>
 <p>广大农民朋友：</p>
 <p>至2020年底，我国脱贫攻坚战取得全面胜利，现行标准下农村贫困人口全部脱贫。但一些农户发展基础还比较脆弱，因病、因残、因学、因务工就业不稳、因缺劳动力以及因突发事件或其他情况等原因可能会导致基本生活出现严重困难，以至于带来不同程度的返贫致贫风险。在过渡期内（2021-2025年），按照党中央部署，建立健全了防止返贫动态监测和帮扶机制，针对出现返贫致贫风险的农户将及时落实监测帮扶措施，切实防范其化解返贫致贫风险，确保巩固拓展脱贫攻坚成果有效衔接乡村振兴工作任务全面落实到位。</p>
@@ -36,6 +88,53 @@
 
 <h2>我们相信</h2>
 <p>在大家的共同努力下，通过落实防止返贫监测帮扶政策，监测对象遇到的困难问题一定能够得到及时有效解决。同时，希望广大农民朋友们能够自力更生，感思奋进，通过自己的努力不断改善生活状况，用自己的双手勤劳致富，让生活更上一层楼！</p>
+
+<!-- 模态框 -->
+<div id="policyModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>防止返贫监测对象申报政策“明白纸”</h2>
+        <p>请仔细阅读以上政策内容。点击“我已阅读”进入申报系统。</p>
+        <button id="continueButton">我已阅读</button>
+    </div>
+</div>
+
+<script>
+    window.onload = function() {
+        if (!sessionStorage.getItem('hasSeenPolicy')) {
+            // 显示模态框
+            document.getElementById("policyModal").style.display = "block";
+        }
+    };
+
+    // 获取并设置“关闭”按钮的功能
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        // 点击关闭时，关闭模态框
+        document.getElementById("policyModal").style.display = "none";
+        // 设置用户已查看政策
+        sessionStorage.setItem('hasSeenPolicy', 'true');
+        // 跳转到表单页
+        window.location.href = "index.html";
+    };
+
+    // 获取并设置“我已阅读”按钮的功能
+    document.getElementById("continueButton").onclick = function() {
+        // 设置用户已查看政策
+        sessionStorage.setItem('hasSeenPolicy', 'true');
+        // 跳转到表单页
+        window.location.href = "index.html";
+    };
+
+    // 当用户点击模态框外部区域时，关闭模态框
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("policyModal")) {
+            document.getElementById("policyModal").style.display = "none";
+            sessionStorage.setItem('hasSeenPolicy', 'true');
+            window.location.href = "index.html";
+        }
+    };
+</script>
 
 </body>
 </html>
