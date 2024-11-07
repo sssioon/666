@@ -8,83 +8,39 @@
 </head>
 <body>
 
-<h1>自主申报在线资料登记系统</h1>
+<!-- 政策明白纸 -->
+<div id="policy-container">
+    <h1>防止返贫监测对象申报政策“明白纸”</h1>
+    <p>广大农民朋友：</p>
+    <p>至2020年底，我国脱贫攻坚战取得全面胜利，现行标准下农村贫困人口全部脱贫。但一些农户发展基础还比较脆弱，因病、因残、因学、因务工就业不稳、因缺劳动力以及因突发事件或其他情况等原因可能会导致基本生活出现严重困难，以至于带来不同程度的返贫致贫风险。在过渡期内（2021-2025年），按照党中央部署，建立健全了防止返贫动态监测和帮扶机制，针对出现返贫致贫风险的农户将及时落实监测帮扶措施，切实防范其化解返贫致贫风险，确保巩固拓展脱贫攻坚成果有效衔接乡村振兴工作任务全面落实到位。</p>
 
-<p>验证时间：<span id="verifyTime"></span></p>
-<p>数据来源：全国防止返贫监测和衔接推进乡村振兴信息系统</p>
+    <p>现将有关政策要点告知如下：</p>
 
-<!-- 表单区域 -->
-<form id="applicationForm">
-    <h2>申请人信息申报</h2>
+    <h2>申请条件</h2>
+    <p>防止返贫监测范围2024年为年人均纯收入8100元是判断能否成为防止返贫监测对象的收入参考。原则上，申请监测对象应至少存在以下返贫致贫风险之一：</p>
+    <ul>
+        <li>1. 家庭唯一住房出现安全问题，家庭无力解决；</li>
+        <li>2. 家里吃水遇到困难，家庭无力解决，包括断水超过1个月、水质有问题、取水距离较远（时间较长）等；</li>
+        <li>3. 家庭成员患大病、重病、长期慢性病等，医药费较高家庭无力负担；</li>
+        <li>4. 家里学生上学开支较大（私立贵族学校除外），家庭无力负担；</li>
+        <li>5. 家里因灾、因意外事故等造成收入大幅减少或支出大幅增加，影响了基本生活；</li>
+        <li>6. 其他特殊情况造成的返贫致贫风险。</li>
+    </ul>
+
+    <h2>申请须知</h2>
+    <p>1. 如申请监测对象，需要配合我们开展入户核实，需要如实准确提供家庭和成员有关情况信息，并授权我们依法依规核查核实家庭成员的收入、财产等相关信息（主要包括银行存款、经商办企业、公职人员、车辆、房产、子女赡养能力等），经村内评议公示，由县乡逐级审核批准。</p>
+
+    <p>2. 如已成为监测对象，我们将根据存在的实际困难和突出问题，从住房安全保障、饮水安全保障、健康帮扶、教育帮扶、产业帮扶、就业帮扶、金融帮扶、综合保障、社会帮扶以及其他方面选择对应措施进行帮扶。</p>
+
+    <p>3. 如家庭困难经过帮扶得到解决、年人均纯收入稳定超过当年防止返贫监测范围，经过入户核实、评议公示和审核批准后，认定返贫致贫风险已经稳定消除的，此后将不再进行针对性帮扶，但会按照相关要求落实常态化监测。</p>
+
+    <p>4. 风险消除后，如家庭出现了新的困难和问题，达到监测对象申报条件的，可再次提出申请。</p>
+
+    <h2>我们相信</h2>
+    <p>在大家的共同努力下，通过落实防止返贫监测帮扶政策，监测对象遇到的困难问题一定能够得到及时有效解决。同时，希望广大农民朋友们能够自力更生，感思奋进，通过自己的努力不断改善生活状况，用自己的双手勤劳致富，让生活更上一层楼！</p>
     
-    <label for="name">申请人姓名：</label>
-    <input type="text" id="name" required>
-
-    <label for="idNumber">申请人证件号码：</label>
-    <input type="text" id="idNumber" required>
-
-    <label for="phone">申请人联系电话：</label>
-    <input type="text" id="phone" required>
-
-    <label for="registeredAddress">申请人户籍地址：</label>
-    <input type="text" id="registeredAddress" required>
-
-    <label for="currentAddress">申请人现居住地：</label>
-    <input type="text" id="currentAddress" required>
-
-    <label for="householdType">户类型：</label>
-    <select id="householdType" required>
-        <option>贫困户</option>
-        <option>监测户</option>
-        <option>脱贫户</option>
-        <option>返贫户</option>
-    </select>
-
-    <label for="identifyDate">识别年度：</label>
-    <input type="date" id="identifyDate" required>
-
-    <label for="noPolicyDate">脱贫不享受政策年度：</label>
-    <input type="date" id="noPolicyDate" required>
-
-    <label for="identifyStandard">识别标准：</label>
-    <input type="text" id="identifyStandard" value="国家标准" readonly>
-
-    <label for="waterStatus">饮水情况：</label>
-    <select id="waterStatus">
-        <option>安全</option>
-        <option>不安全</option>
-    </select>
-
-    <label for="housingStatus">住房情况：</label>
-    <select id="housingStatus">
-        <option>安全</option>
-        <option>不安全</option>
-    </select>
-
-    <label for="workersCount">家庭务工人员数：</label>
-    <input type="number" id="workersCount" required>
-
-    <label for="workIncome">务工收入合计(元)：</label>
-    <input type="number" id="workIncome" required>
-
-    <label for="averageIncome">家庭人均纯收入：</label>
-    <input type="number" id="averageIncome" required>
-
-    <label for="registerDate">登记时间：</label>
-    <input type="date" id="registerDate" required>
-
-    <label for="idCardFront">身份证正面：</label>
-    <input type="file" id="idCardFront" accept="image/*" required>
-
-    <label for="idCardBack">身份证反面：</label>
-    <input type="file" id="idCardBack" accept="image/*" required>
-
-    <button type="submit">提交申请</button>
-</form>
-
-<!-- 链接到其他页面 -->
-<p><a href="statistics.html" target="_blank">查看最新的申报数据统计表</a></p>
-<p><a href="mingbai_zhi.html" target="_blank">防止返贫监测对象申报政策“明白纸”</a></p>
+    <button id="openFormButton">开始填写表格</button>
+</div>
 
 <script src="script.js"></script>
 </body>
