@@ -1,96 +1,37 @@
-/* 主体背景 */
-body {
-    font-family: "Microsoft YaHei", Arial, sans-serif;
-    margin: 0;
-    background-color: #f1f9ff;
-    color: #333;
-}
+document.getElementById("applicationForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-/* 头部样式 */
-h1 {
-    background-color: #00456a; /* 深蓝色 */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 0;
-}
+    const formData = new FormData();
+    formData.append("name", document.getElementById("name").value);
+    formData.append("idNumber", document.getElementById("idNumber").value);
+    formData.append("phone", document.getElementById("phone").value);
+    formData.append("registeredAddress", document.getElementById("registeredAddress").value);
+    formData.append("currentAddress", document.getElementById("currentAddress").value);
+    formData.append("householdType", document.getElementById("householdType").value);
+    formData.append("identifyDate", document.getElementById("identifyDate").value);
+    formData.append("noPolicyDate", document.getElementById("noPolicyDate").value);
+    formData.append("identifyStandard", document.getElementById("identifyStandard").value);
+    formData.append("waterStatus", document.getElementById("waterStatus").value);
+    formData.append("housingStatus", document.getElementById("housingStatus").value);
+    formData.append("workersCount", document.getElementById("workersCount").value);
+    formData.append("workIncome", document.getElementById("workIncome").value);
+    formData.append("averageIncome", document.getElementById("averageIncome").value);
+    formData.append("registerDate", document.getElementById("registerDate").value);
+    formData.append("idCardFront", document.getElementById("idCardFront").files[0]);
+    formData.append("idCardBack", document.getElementById("idCardBack").files[0]);
 
-/* 表单和表格 */
-form, table {
-    width: 80%;
-    margin: 20px auto;
-}
-
-/* 表单标签 */
-form label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* 输入框 */
-form input, form select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* 按钮 */
-button {
-    background-color: #4CAF50; /* 绿色 */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: auto;
-    margin-top: 20px;
-}
-
-/* 按钮悬停 */
-button:hover {
-    background-color: #45a049;
-}
-
-/* 表格样式 */
-table {
-    border-collapse: collapse;
-    width: 90%;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #00456a;
-    color: white;
-    font-weight: bold;
-}
-
-td {
-    background-color: #fff;
-}
-
-/* 链接样式 */
-a {
-    color: #1e88e5;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* 上传按钮 */
-input[type="file"] {
-    margin-top: 10px;
-}
+    // 向 API 发送数据
+    fetch('API_URL', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('提交成功！');
+        window.location.href = "statistics.html";
+    })
+    .catch(error => {
+        console.error('提交失败:', error);
+        alert('提交失败，请稍后重试');
+    });
+});
