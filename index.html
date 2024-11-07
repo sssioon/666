@@ -10,7 +10,10 @@
 
 <h1>自主申报在线资料登记系统</h1>
 
-<!-- 表单部分 -->
+<p>验证时间：<span id="verifyTime"></span></p>
+<p>数据来源：全国防止返贫监测和衔接推进乡村振兴信息系统</p>
+
+<!-- 表单区域 -->
 <form id="applicationForm">
     <h2>申请人信息申报</h2>
     
@@ -28,8 +31,6 @@
 
     <label for="currentAddress">申请人现居住地：</label>
     <input type="text" id="currentAddress" required>
-
-    <h2>家庭信息</h2>
 
     <label for="householdType">户类型：</label>
     <select id="householdType" required>
@@ -60,7 +61,6 @@
         <option>不安全</option>
     </select>
 
-    <h2>就业情况</h2>
     <label for="workersCount">家庭务工人员数：</label>
     <input type="number" id="workersCount" required>
 
@@ -76,30 +76,9 @@
     <button type="submit">提交申请</button>
 </form>
 
-<!-- 统计表格部分 -->
-<h2>申报数据统计表</h2>
-<table id="dataTable">
-    <tr>
-        <th>申请人姓名</th>
-        <th>证件号码</th>
-        <th>联系电话</th>
-        <th>户籍地址</th>
-        <th>现居住地</th>
-        <th>户类型</th>
-        <th>识别年度</th>
-        <th>脱贫不享受政策年度</th>
-        <th>识别标准</th>
-        <th>饮水情况</th>
-        <th>住房情况</th>
-        <th>家庭务工人数</th>
-        <th>务工收入(元)</th>
-        <th>家庭人均纯收入</th>
-        <th>登记时间</th>
-    </tr>
-</table>
-
-<!-- 明白纸链接 -->
-<a href="mingbai_zhi.html" target="_blank">防止返贫监测对象申报政策“明白纸”</a>
+<!-- 链接到其他页面 -->
+<p><a href="statistics.html" target="_blank">查看最新的申报数据统计表</a></p>
+<p><a href="mingbai_zhi.html" target="_blank">防止返贫监测对象申报政策“明白纸”</a></p>
 
 <script src="script.js"></script>
 </body>
