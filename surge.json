@@ -1,0 +1,6 @@
+{
+  "redirects": [],
+  "routes": {
+    "/": "/index.html"
+  }
+}
