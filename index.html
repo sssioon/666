@@ -1,28 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web App</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>自主申报在线资料登记系统</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to My Web App</h1>
-    </header>
+<h1>自主申报在线资料登记系统</h1>
 
-    <main>
-        <div id="content">
-            <p>This is a simple webpage. Enjoy your stay!</p>
-            <button id="clickButton">Click Me!</button>
-        </div>
-    </main>
+<!-- 表单部分 -->
+<form id="applicationForm">
+    <h2>申请人信息申报</h2>
+    
+    <label for="name">申请人姓名：</label>
+    <input type="text" id="name" required>
 
-    <footer>
-        <p>&copy; 2024 My Web App</p>
-    </footer>
+    <label for="idNumber">申请人证件号码：</label>
+    <input type="text" id="idNumber" required>
 
-    <script src="script.js"></script>
+    <label for="phone">申请人联系电话：</label>
+    <input type="text" id="phone" required>
+
+    <label for="registeredAddress">申请人户籍地址：</label>
+    <input type="text" id="registeredAddress" required>
+
+    <label for="currentAddress">申请人现居住地：</label>
+    <input type="text" id="currentAddress" required>
+
+    <h2>家庭信息</h2>
+
+    <label for="householdType">户类型：</label>
+    <select id="householdType" required>
+        <option>贫困户</option>
+        <option>监测户</option>
+        <option>脱贫户</option>
+        <option>返贫户</option>
+    </select>
+
+    <label for="identifyDate">识别年度：</label>
+    <input type="date" id="identifyDate" required>
+
+    <label for="noPolicyDate">脱贫不享受政策年度：</label>
+    <input type="date" id="noPolicyDate" required>
+
+    <label for="identifyStandard">识别标准：</label>
+    <input type="text" id="identifyStandard" value="国家标准" readonly>
+
+    <label for="waterStatus">饮水情况：</label>
+    <select id="waterStatus">
+        <option>安全</option>
+        <option>不安全</option>
+    </select>
+
+    <label for="housingStatus">住房情况：</label>
+    <select id="housingStatus">
+        <option>安全</option>
+        <option>不安全</option>
+    </select>
+
+    <h2>就业情况</h2>
+    <label for="workersCount">家庭务工人员数：</label>
+    <input type="number" id="workersCount" required>
+
+    <label for="workIncome">务工收入合计(元)：</label>
+    <input type="number" id="workIncome" required>
+
+    <label for="averageIncome">家庭人均纯收入：</label>
+    <input type="number" id="averageIncome" required>
+
+    <label for="registerDate">登记时间：</label>
+    <input type="date" id="registerDate" required>
+
+    <button type="submit">提交申请</button>
+</form>
+
+<!-- 统计表格部分 -->
+<h2>申报数据统计表</h2>
+<table id="dataTable">
+    <tr>
+        <th>申请人姓名</th>
+        <th>证件号码</th>
+        <th>联系电话</th>
+        <th>户籍地址</th>
+        <th>现居住地</th>
+        <th>户类型</th>
+        <th>识别年度</th>
+        <th>脱贫不享受政策年度</th>
+        <th>识别标准</th>
+        <th>饮水情况</th>
+        <th>住房情况</th>
+        <th>家庭务工人数</th>
+        <th>务工收入(元)</th>
+        <th>家庭人均纯收入</th>
+        <th>登记时间</th>
+    </tr>
+</table>
+
+<!-- 明白纸链接 -->
+<a href="mingbai_zhi.html" target="_blank">防止返贫监测对象申报政策“明白纸”</a>
+
+<script src="script.js"></script>
 </body>
 </html>
