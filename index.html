@@ -13,21 +13,10 @@
 <p>验证时间：<span id="verifyTime"></span></p>
 <p>数据来源：全国防止返贫监测和衔接推进乡村振兴信息系统</p>
 
-<!-- 身份证上传弹窗 -->
-<div class="overlay" id="policyOverlay">
-    <div class="overlay-content">
-        <span class="close-overlay" onclick="closePolicy()">×</span>
-        <h2>防止返贫监测对象申报政策“明白纸”</h2>
-        <p>广大农民朋友：至2020年底，我国脱贫攻坚战取得全面胜利...</p>
-        <p><a href="mingbai_zhi.html" target="_blank">查看详细政策</a></p>
-        <button onclick="redirectToForm()">继续填写表单</button>
-    </div>
-</div>
-
 <!-- 表单区域 -->
 <form id="applicationForm">
     <h2>申请人信息申报</h2>
-
+    
     <label for="name">申请人姓名：</label>
     <input type="text" id="name" required>
 
@@ -36,13 +25,6 @@
 
     <label for="phone">申请人联系电话：</label>
     <input type="text" id="phone" required>
-
-<label for="idFront">身份证正面：</label>
-<input type="file" id="idFront" accept="image/*" required>
-
-<label for="idBack">身份证反面：</label>
-<input type="file" id="idBack" accept="image/*" required>
-
 
     <label for="registeredAddress">申请人户籍地址：</label>
     <input type="text" id="registeredAddress" required>
@@ -91,12 +73,18 @@
     <label for="registerDate">登记时间：</label>
     <input type="date" id="registerDate" required>
 
+    <label for="idCardFront">身份证正面：</label>
+    <input type="file" id="idCardFront" accept="image/*" required>
+
+    <label for="idCardBack">身份证反面：</label>
+    <input type="file" id="idCardBack" accept="image/*" required>
+
     <button type="submit">提交申请</button>
 </form>
 
 <!-- 链接到其他页面 -->
 <p><a href="statistics.html" target="_blank">查看最新的申报数据统计表</a></p>
-<p><a href="javascript:void(0);" onclick="showPolicy()">防止返贫监测对象申报政策“明白纸”</a></p>
+<p><a href="mingbai_zhi.html" target="_blank">防止返贫监测对象申报政策“明白纸”</a></p>
 
 <script src="script.js"></script>
 </body>
